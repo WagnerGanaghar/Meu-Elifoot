@@ -1,0 +1,141 @@
+from time import sleep
+from random import randint
+time1geral = 0
+time2geral = 0
+defesa1geral = 0
+defesa2geral = 0
+meio1geral = 0
+meio2geral = 0
+ataque1geral = 0
+ataque2geral = 0
+# escalando time 1
+print('ESCALE O TIME DA CASA:')
+sleep(2)
+goleirotime1 = int(input('Força do goleiro: '))
+defesa1time1 = int(input('Força do zagueiro 1: '))
+defesa2time1 = int(input('Força zagueiro 2: '))
+lateral1time1 = int(input('Força lateral 1: '))
+lateral2time1 = int(input('Força lateral 2: '))
+meia1time1 = int(input('Força meia 1: '))
+meia2time1 = int(input('Força meia 2: '))
+meia3time1 = int(input('Força meia 3: '))
+meia4time1 = int(input('Força meia 4: '))
+atacante1time1 = int(input('Força atacante 1: '))
+atacante2time1 = int(input('Força atacante 2: '))
+
+# medias time 1
+defesa1geral = (goleirotime1 + defesa1time1 + defesa2time1 + lateral1time1 + lateral2time1)
+meio1geral = (meia1time1 + meia2time1 + meia3time1 + meia4time1)
+ataque1geral = (atacante1time1 + atacante2time1)
+time1geral = (defesa1geral + meio1geral + ataque1geral)
+print('O total de defesa é {}, de controle {} e ataque é {}.'.format(defesa1geral, meio1geral, ataque1geral))
+print('O total de força do time 1 é {}.'.format(time1geral))
+# escalando time 2
+print('ESCALE O TIME VISITANTE:')
+sleep(2)
+goleirotime2 = int(input('Força do goleiro: '))
+defesa1time2 = int(input('Força do zagueiro 1: '))
+defesa2time2 = int(input('Força zagueiro 2: '))
+lateral1time2 = int(input('Força lateral 1: '))
+lateral2time2 = int(input('Força lateral 2: '))
+meia1time2 = int(input('Força meia 1: '))
+meia2time2 = int(input('Força meia 2: '))
+meia3time2 = int(input('Força meia 3: '))
+meia4time2 = int(input('Força meia 4: '))
+atacante1time2 = int(input('Força atacante 1: '))
+atacante2time2 = int(input('Força atacante 2: '))
+
+# medias time 2
+defesa2geral = (goleirotime2 + defesa1time2 + defesa2time2 + lateral1time2 + lateral2time2)
+meio2geral = (meia1time2 + meia2time2 + meia3time2 + meia4time2)
+ataque2geral = (atacante1time2 + atacante2time2)
+time2geral = (defesa2geral + meio2geral + ataque2geral)
+print('O total de defesa é {}, de controle {} e ataque é {}.'.format(defesa2geral, meio2geral, ataque2geral))
+print('O total de força do time 2 é {}.'.format(time2geral))
+# calculando os gols do primeiro tempo
+
+tempo1golstime1começa = randint(0, 1)
+tempo1golstime2começa = 0
+tempo1golstime1emp = 0
+tempo1golstime2emp = 0
+tempo1golstime1 = 0
+tempo1golstime2 = 0
+sleep(3)
+print('CALCULANDO PRIMEIRO TEMPO...')
+sleep(2)
+print('ATÉ AGORA O JOGO ESTÁ BOM!')
+sleep(2)
+if time1geral > time2geral:
+    tempo1golstime1 = randint(0, 2)
+    tempo1golstime2 = randint(0, 1)
+elif time1geral < time2geral:
+    tempo1golstime1 = randint(0, 1)
+    tempo1golstime2 = randint(0, 2)
+elif time1geral == time2geral:
+    tempo1golstime1emp = randint(0, 1)
+    tempo1golstime2emp = randint(0, 1)
+
+primeiro_golstime1 = tempo1golstime1 + tempo1golstime1começa + tempo1golstime1emp # gols do time 1 primeiro tempo
+primeiro_golstime2 = tempo1golstime2 + tempo1golstime2começa + tempo1golstime2emp # gols do time 2 primeiro tempo
+print('TIME DA CASA {} X {} TIME VISITANTE'.format(primeiro_golstime1, primeiro_golstime2))
+print('Vamos para o segundo tempo desse jogo emocionante!!!')
+sleep(3)
+tempo2golstime1começa = 0
+tempo2golstime2começa = randint(0, 1)
+tempo2golstime1emp = 0
+tempo2golstime2emp = 0
+tempo2golstime1 = 0
+tempo2golstime2 = 0
+print('Segundo tempo empolgante!')
+if time1geral > time2geral:
+    tempo2golstime1 = randint(0, 2)
+    tempo2golstime2 = randint(0, 1)
+elif time1geral < time2geral:
+    tempo2golstime1 = randint(0, 1)
+    tempo2golstime2 = randint(0, 2)
+elif time1geral == time2geral:
+    tempo2golstime1emp = randint(0, 1)
+    tempo2golstime2emp = randint(0, 1)
+segundo_golstime1 = tempo2golstime1 + tempo2golstime1começa + tempo2golstime1emp # gols do time 1 segundo tempo
+segundo_golstime2 = tempo2golstime2 + tempo2golstime2começa + tempo2golstime2emp # gols do time 2 segundo tempo
+
+totalgolstime1 = primeiro_golstime1 + segundo_golstime1
+totalgolstime2 = primeiro_golstime2 + segundo_golstime2
+
+favoritocasa = 0
+favoritofora = 0
+
+if time1geral - time2geral >= 30:
+    favoritocasa = 2
+    print('O time da casa joga melhor!')
+else:
+    print('Que jogo equilibrado!')
+print('A torcida faz um belo espetáculo!!!')
+
+if time2geral - time2geral >= 35:
+    favoritofora = 2
+    print('Apesar de jogar fora, o time visitante é melhor.')
+else:
+    print('Que jogo bom!')
+
+sleep(3)
+
+zagacasaruim = 0
+zagaforaruim = 0
+
+if defesa1geral < 35:
+    zagacasaruim = 1
+else:
+    zagacasaruim = 0
+
+if defesa2geral < 35:
+    zagaforaruim = 1
+else:
+    zagaforaruim = 0
+
+
+
+print('Tivemos muita ação nesse segundo tempo.')
+sleep(2)
+print('TIME DA CASA {} X {} TIME VISITANTE'.format(totalgolstime1 + favoritocasa +zagaforaruim, totalgolstime2 + favoritofora + zagacasaruim))
+print('QUE GRANDE JOGO, MEUS AMIGOS!')
